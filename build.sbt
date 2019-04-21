@@ -3,6 +3,8 @@ name := "spark-clipboard"
 
 version := "0.1"
 
+licenses += ("Apache-2.0", url("https://opensource.org/licenses/Apache-2.0"))
+
 scalaVersion := "2.12.8"
 
 val sparkVersion = "2.4.1"
