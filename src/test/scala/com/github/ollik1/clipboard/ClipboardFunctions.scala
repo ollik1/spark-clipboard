@@ -1,4 +1,5 @@
-package org.ollik1.clipboard
+package com.github.ollik1.clipboard
+
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 

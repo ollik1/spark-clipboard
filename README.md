@@ -21,14 +21,14 @@ The file system needs to be registered when creating the Spark session:
 val spark = SparkSession
   .builder()
   .master("local")
-  .config("fs.clipboard.impl", "org.ollik1.clipboard.ClipboardFileSystem")
+  .config("fs.clipboard.impl", "com.github.ollik1.clipboard.ClipboardFileSystem")
   .getOrCreate()
 ```
 
 After this, it is possible to create data frames from copied print outputs:
 ```
 val df = spark.read
-  .format("org.ollik1.clipboard")
+  .format("com.github.ollik1.clipboard")
   .load("clipboard:///*")
 ```
 

@@ -1,4 +1,5 @@
-package org.ollik1.clipboard
+package com.github.ollik1.clipboard
+
 import org.apache.spark.sql.types.{
   IntegerType,
   StringType,
@@ -13,7 +14,7 @@ class DataSourceTest extends FunSuite with Matchers with ClipboardFunctions {
   val spark = SparkSession
     .builder()
     .master("local")
-    .config("fs.clipboard.impl", "org.ollik1.clipboard.ClipboardFileSystem")
+    .config("fs.clipboard.impl", "com.github.ollik1.clipboard.ClipboardFileSystem")
     .getOrCreate()
     .sqlContext
   import spark.implicits._
@@ -28,7 +29,7 @@ class DataSourceTest extends FunSuite with Matchers with ClipboardFunctions {
         |+----+----+
       """.stripMargin) {
       val df = spark.read
-        .format("org.ollik1.clipboard")
+        .format("com.github.ollik1.clipboard")
         .load("clipboard:///*")
 
       df.schema shouldBe StructType(
@@ -59,7 +60,7 @@ class DataSourceTest extends FunSuite with Matchers with ClipboardFunctions {
         |+----+----+
       """.stripMargin) {
       val df = spark.read
-        .format("org.ollik1.clipboard")
+        .format("com.github.ollik1.clipboard")
         .schema(schema)
         .load("clipboard:///*")
 
@@ -85,7 +86,7 @@ class DataSourceTest extends FunSuite with Matchers with ClipboardFunctions {
                     |+----+----+
                   """.stripMargin) {
       spark.read
-      .format("org.ollik1.clipboard")
+      .format("com.github.ollik1.clipboard")
       .load("clipboard:///*").schema
     }
 
@@ -98,7 +99,7 @@ class DataSourceTest extends FunSuite with Matchers with ClipboardFunctions {
                                   |   +----+----+
                                 """.stripMargin) {
       spark.read
-        .format("org.ollik1.clipboard")
+        .format("com.github.ollik1.clipboard")
         .load("clipboard:///*").schema
     }
 

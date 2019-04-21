@@ -1,4 +1,4 @@
-organization := "org.ollik1"
+organization := "com.github.ollik1"
 name := "spark-clipboard"
 
 version := "0.1"

@@ -1,4 +1,5 @@
-package org.ollik1.clipboard
+package com.github.ollik1.clipboard
+
 import org.apache.spark.sql.{DataFrameReader, SQLContext}
 import org.apache.spark.sql.sources.{
   BaseRelation,

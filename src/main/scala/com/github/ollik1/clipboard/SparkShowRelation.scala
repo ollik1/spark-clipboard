@@ -1,4 +1,5 @@
-package org.ollik1.clipboard
+package com.github.ollik1.clipboard
+
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.sources.{BaseRelation, TableScan}
 import org.apache.spark.sql.types.StructType

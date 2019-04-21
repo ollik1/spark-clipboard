@@ -1,4 +1,5 @@
-package org.ollik1.clipboard
+package com.github.ollik1.clipboard
+
 import java.io.ByteArrayInputStream
 import java.nio.charset.StandardCharsets
 
