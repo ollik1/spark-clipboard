@@ -33,3 +33,36 @@ val df = spark.read
 ```
 
 Naturally, the components are independent from each other and it is possible to read files containing Spark show outputs or read pure CSV or any other supported format from clipboard.
+
+## Installation
+
+### Sbt builds
+
+Make sure jcenter resolver is enabled
+```
+resolvers += Resolver.jcenterRepo
+```
+
+and add the dependency
+```
+libraryDependencies += "com.github.ollik1" %% "spark-clipboard" % "0.1"
+```
+
+Similar steps apply for maven, gradle, etc.
+
+### Adding to a binary installation
+
+Add the following lines to `conf/spark-defaults.conf`
+```
+spark.jars.repositories=https://dl.bintray.com/ollik1/spark-clipboard/
+spark.jars.packages=com.github.ollik1:spark-clipboard_2.12:0.1
+```
+
+and `conf/core-site.xml`
+```
+<configuration>
+  ...
+  <property><name>fs.clipboard.impl</name><value>com.github.ollik1.clipboard.ClipboardFileSystem</value></property>
+  ...
+</configuration>
+```
