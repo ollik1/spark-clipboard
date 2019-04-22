@@ -66,3 +66,15 @@ and `conf/core-site.xml`
   ...
 </configuration>
 ```
+
+## Usage
+
+Consider this question on Stack Overflow https://stackoverflow.com/questions/55387384/more-convenient-way-to-reproduce-pyspark-sample
+
+After following the installation steps, we can now go to the post and copy the printed data frame from the question to system clipboard
+
+![Copyig](https://raw.githubusercontent.com/ollik1/spark-clipboard/assets/img/copy.png)
+
+and then go to Spark shell to create a data frame based on the contents
+
+![Paste](https://raw.githubusercontent.com/ollik1/spark-clipboard/assets/img/paste.png)
